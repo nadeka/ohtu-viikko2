@@ -1,12 +1,18 @@
 package ohtu.verkkokauppa;
 
-import java.util.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
+
+@Component
 public class Varasto implements Tuotesailio {
-    
+
     private Merkkijonolista merkkijonolista;
-    private HashMap<Tuote, Integer> saldot;  
-    
+
+    private HashMap<Tuote, Integer> saldot;
+
+    @Autowired
     public Varasto(Merkkijonolista merkkijonolista) {
         this.merkkijonolista = merkkijonolista;
         saldot = new HashMap<Tuote, Integer>();
